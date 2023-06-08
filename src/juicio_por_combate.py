@@ -1,14 +1,14 @@
 import json
 
 
-def guardar_jugador(jugador):
+def guardar_jugador(fichero, jugador):
     """guarda la jugador en un fichero"""
     # escribir en un archivo
 
     # w: para escribir en el
     # r: para leer
     # +: para crearlo si no existe
-    archivo = open("./bd.json", "w+")
+    archivo = open(fichero, "w+")
 
     # pasamos la jugador a un string en formato json
     jugador_en_json = json.dumps(jugador, indent=2)

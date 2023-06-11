@@ -1,3 +1,4 @@
+import sys
 import json
 
 
@@ -20,10 +21,10 @@ def guardar_jugador(fichero, jugador):
     archivo.close()
 
 
-def cargar_jugador():
+def cargar_jugador(archivo):
     """cargar la jugador desde un fichero"""
     try:
-        archivo = open("bd.json", "r")
+        archivo = open(archivo, "r")
 
         # leemos el archivo
         jugador_en_json = archivo.read()
@@ -42,4 +43,6 @@ def cargar_jugador():
     return jugador
 
 
-print("Juicio por combate")
+jugador = cargar_jugador(sys.argv[1])
+
+print(f"Jugador: {json.dumps(jugador)}")
